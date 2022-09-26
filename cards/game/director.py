@@ -64,9 +64,11 @@ class Director:
         if not self.is_playing:
             return 
 
-        for i in range(len(self.cards)):
+        for i in range(len(self.card1)):
             card = self.card1[i]
             card.draw()
+            card_number = card.value1
+            return card_number
 
     def make_guess(self):
         """Ask the user if they want to roll.
@@ -87,12 +89,11 @@ class Director:
         if not self.is_playing:
             return 
 
-        for i in range(len(self.cards)):
+        for i in range(len(self.card2)):
             card = self.card1[i]
             card.draw()
-            self.score += card.points 
-        self.total_score += self.score
-
+            card_number = card.value2
+            return card_number
     def do_outputs(self):
         """Displays the dice and the score. Also asks the player if they want to roll again. 
 
