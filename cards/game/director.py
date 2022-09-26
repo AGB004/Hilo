@@ -52,6 +52,7 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
+        print()
         play = input("Play again? [y/n] ")
         self.is_playing = (play == "y")
 
@@ -67,9 +68,8 @@ class Director:
         for i in range(len(self.card1)):
             card = self.card1[i]
             card.draw()
-            card_number = card.value1
-            return card_number
-
+            print(f"{card.value1}")
+            
     def make_guess(self):
         """Ask the user if they want to roll.
 
@@ -86,29 +86,20 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        if not self.is_playing:
-            return 
-
         for i in range(len(self.card2)):
-            card = self.card1[i]
+            card = self.card2[i]
             card.draw()
-            card_number = card.value2
-            return card_number
+            print(f"{card.value2}")
+            card.calculate()
+            self.score += card.points 
+        self.total_score += self.score
+
     def do_outputs(self):
         """Displays the dice and the score. Also asks the player if they want to roll again. 
 
         Args:
             self (Director): An instance of Director.
         """
-        if not self.is_playing:
-            return
-        
-        values = ""
-        for i in range(len(self.dice)):
-            die = self.dice[i]
-            values += f"{die.value} "
-
-        print(f"You rolled: {values}")
         print(f"Your score is: {self.total_score}\n")
-        self.is_playing = (self.score > 0)
+        self.is_playing == (self.score > 0)
         
