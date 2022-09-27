@@ -52,7 +52,6 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        print()
         play = input("Play again? [y/n] ")
         self.is_playing = (play == "y")
 
