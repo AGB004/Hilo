@@ -93,9 +93,6 @@ class Director:
                 card.calculate_hi()
                 self.score += card.points
             self.total_score += self.score
-        
-        else:
-            print("Invalid Choice")
 
     def do_outputs(self):
         """Displays the dice and the score. Also asks the player if they want to roll again. 
