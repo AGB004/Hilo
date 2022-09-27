@@ -1,5 +1,5 @@
 # Cards
-Are you willing to risk everything? Play Cards and you might be surprised. The rules are simple. Guess if the next card will be higher or lower. 100 points if you guessed correctly, and lose 75 points if you guessed incorrectly. As long as you don't hit 0 points, you can play again. If not the game is over.
+Are you willing to risk everything? Play Cards and you might be surprised. The rules are simple. Guess if the next card will be higher or lower. 100 points if you guess correctly, and lose 75 points if you guess incorrectly. As long as you don't hit 0 points, you can play again. If not the game is over.
 
 ## Getting Started
 ---
