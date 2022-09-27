@@ -82,7 +82,8 @@ class Director:
                 card.draw()
                 print(f"Next card is: {card.value2}")
                 card.calculate_hi()
-                self.score += card.points 
+                self.score += card.points
+                print(f"Round points: {self.score}") 
             self.total_score += self.score
 
         elif draw_card.lower() == "l":
@@ -92,6 +93,7 @@ class Director:
                 print(f"Next card is: {card.value2}")
                 card.calculate_lo()
                 self.score += card.points
+                print(f"Round points: {self.score}")
             self.total_score += self.score
 
     def do_outputs(self):
@@ -100,6 +102,6 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        print(f"Your score is: {self.total_score}\n")
+        print(f"Your total score is: {self.total_score}\n")
         self.is_playing == (self.score > 0)
         
