@@ -22,8 +22,8 @@ class Director:
         self.card1 = []
         self.card2 = []
         self.is_playing = True
-        self.score = 300
-        self.total_score = 0
+        self.score = 0
+        self.total_score = 300
 
         for i in range(1):
             card = Cards()
@@ -75,6 +75,7 @@ class Director:
             self (Director): An instance of Director.
         """
         draw_card = input("Higher or Lower? [h/l] ")
+        self.score = 0
         
         if draw_card.lower() == "h":
             for i in range(len(self.card2)):
