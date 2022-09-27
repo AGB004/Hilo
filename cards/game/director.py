@@ -76,9 +76,6 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        if not self.is_playing:
-            return
-
         draw_card = input("Higher or Lower? [h/l] ")
         self.is_playing = (draw_card == "y")            
 
@@ -88,9 +85,6 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        if not self.is_playing:
-            return
-
         for i in range(len(self.card2)):
             card = self.card2[i]
             card.draw()
@@ -105,9 +99,6 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        if not self.is_playing:
-            return
-
         print(f"Your score is: {self.total_score}\n")
         self.is_playing == (self.score > 0)
         
