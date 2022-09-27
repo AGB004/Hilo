@@ -48,7 +48,7 @@ class Cards():
             self.points = 100
         elif self.value1 == self.value2:
             self.points = 0
-        else:
+        elif self.value1 > self.value2:
             self.points = -75
 
     # 3) Create the roll(self) method. Use the following method comment.
@@ -62,6 +62,6 @@ class Cards():
             self.points = 100
         elif self.value1 == self.value2:
             self.points = 0
-        else:
+        elif self.value1 < self.value2:
             self.points = -75
 
