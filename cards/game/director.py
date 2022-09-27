@@ -76,7 +76,7 @@ class Director:
         """
         draw_card = input("Higher or Lower? [h/l] ")
         
-        if draw_card.lower == "h":
+        if draw_card.lower() == "h":
             for i in range(len(self.card2)):
                 card = self.card2[i]
                 card.draw()
@@ -85,12 +85,12 @@ class Director:
                 self.score += card.points 
             self.total_score += self.score
 
-        elif draw_card.lower == "l":
+        elif draw_card.lower() == "l":
             for i in range(len(self.card2)):
                 card = self.card2[i]
                 card.draw()
                 print(f"Next card is: {card.value2}")
-                card.calculate_hi()
+                card.calculate_lo()
                 self.score += card.points
             self.total_score += self.score
 
@@ -100,7 +100,6 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        self.total_score = 0
         print(f"Your score is: {self.total_score}\n")
         self.is_playing == (self.score > 0)
         
