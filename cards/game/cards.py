@@ -44,7 +44,7 @@ class Cards():
         Args:
             self (Die): An instance of Die.
         """    
-        if self.value1 > self.value2:
+        if self.value1 < self.value2:
             self.points = 100
         elif self.value1 == self.value2:
             self.points = 0
