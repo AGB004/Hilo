@@ -22,7 +22,7 @@ class Director:
         self.card1 = []
         self.card2 = []
         self.is_playing = True
-        self.score = 0
+        self.score = 300
         self.total_score = 0
 
         for i in range(1):
@@ -68,7 +68,7 @@ class Director:
         for i in range(len(self.card1)):
             card = self.card1[i]
             card.draw()
-            print(f"{card.value1}")
+            print(f"The card is: {card.value1}")
             
     def make_guess(self):
         """Ask the user if they want to roll.
@@ -76,7 +76,6 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        print(f"The card is: {self.card1}")
         draw_card = input("Higher or Lower? [h/l] ")
         self.is_playing = (draw_card == "y")            
 
@@ -89,7 +88,7 @@ class Director:
         for i in range(len(self.card2)):
             card = self.card2[i]
             card.draw()
-            print(f"{card.value2}")
+            print(f"Next card is: {card.value2}")
             card.calculate()
             self.score += card.points 
         self.total_score += self.score
