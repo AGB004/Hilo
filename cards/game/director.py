@@ -40,11 +40,11 @@ class Director:
             self (Director): an instance of Director.
         """
         while self.is_playing:
-            self.get_play()
             self.draw_card1()
             self.make_guess()
             self.draw_card2()
             self.do_outputs()
+            self.get_play()
 
     def get_play(self):
         """Ask the user if they want to roll.
@@ -53,7 +53,7 @@ class Director:
             self (Director): An instance of Director.
         """
         print()
-        play = input("Play game? [y/n] ")
+        play = input("Play again? [y/n] ")
         self.is_playing = (play == "y")
 
     def draw_card1(self):
