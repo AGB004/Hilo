@@ -28,15 +28,23 @@ class Cards():
         self.points = 0
 
     # 3) Create the roll(self) method. Use the following method comment.
-    def draw(self):
+    def draw1(self):
         """Generates a new random value and calculates the points.
         
         Args:
             self (Die): An instance of Die.
         """
         self.value1 = random.randint(1, 13)
-        self.value2 = random.randint(1, 13)
     
+    # 3) Create the roll(self) method. Use the following method comment.
+    def draw2(self):
+        """Generates a new random value and calculates the points.
+        
+        Args:
+            self (Die): An instance of Die.
+        """
+        self.value2 = random.randint(1, 13)
+
     # 3) Create the roll(self) method. Use the following method comment.
     def calculate_hi(self):
         """Generates a new random value and calculates the points.
@@ -46,10 +54,10 @@ class Cards():
         """    
         if self.value1 < self.value2:
             self.points = 100
-        elif self.value1 == self.value2:
-            self.points = 0
         elif self.value1 > self.value2:
             self.points = -75
+        else:
+            self.points = 0
 
     # 3) Create the roll(self) method. Use the following method comment.
     def calculate_lo(self):
@@ -60,8 +68,8 @@ class Cards():
         """    
         if self.value1 > self.value2:
             self.points = 100
-        elif self.value1 == self.value2:
-            self.points = 0
         elif self.value1 < self.value2:
             self.points = -75
+        else:
+            self.points = 0
 

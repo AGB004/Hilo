@@ -26,12 +26,12 @@ class Director:
         self.total_score = 300
 
         for i in range(1):
-            card = Cards()
-            self.card1.append(card)
+            card1 = Cards()
+            self.card1.append(card1)
 
         for i in range(1):
-            card = Cards()
-            self.card2.append(card)
+            card2 = Cards()
+            self.card2.append(card2)
 
     def start_game(self):
         """Starts the game by running the main game loop.
@@ -40,8 +40,7 @@ class Director:
             self (Director): an instance of Director.
         """
         while self.is_playing:
-            self.draw_card1()
-            self.draw_card2()
+            self.draw_cards()
             self.do_outputs()
             self.get_play()
 
@@ -54,7 +53,7 @@ class Director:
         play = input("Play again? [y/n] ")
         self.is_playing = (play == "y")
 
-    def draw_card1(self):
+    def draw_cards(self):
         """Updates the player's score.
 
         Args:
@@ -64,37 +63,36 @@ class Director:
             return 
 
         for i in range(len(self.card1)):
-            card = self.card1[i]
-            card.draw()
-            print(f"The card is: {card.value1}")          
+            card1 = self.card1[i]
+            card1.draw1()
+            value = f"{card1.value1}"
+        print(f"The card is: {value}")          
 
-    def draw_card2(self):
-        """Updates the player's score.
-
-        Args:
-            self (Director): An instance of Director.
-        """
         draw_card = input("Higher or Lower? [h/l] ")
         self.score = 0
-        
+
         if draw_card.lower() == "h":
             for i in range(len(self.card2)):
-                card = self.card2[i]
-                card.draw()
-                print(f"Next card is: {card.value2}")
-                card.calculate_hi()
-                self.score += card.points
-                print(f"Round points: {self.score}") 
+                card2 = self.card2[i]
+                card2.draw2()
+                value = f"{card2.value}"
+                value2 = f"{card2.value2}"
+                card2.calculate_hi()
+                self.score += card2.points
+            print(f"Next card is: {value}")
+            print(f"Value 2: {value2}")
+            print(f"Round points: {self.score}") 
             self.total_score += self.score
 
         elif draw_card.lower() == "l":
             for i in range(len(self.card2)):
-                card = self.card2[i]
-                card.draw()
-                print(f"Next card is: {card.value2}")
-                card.calculate_lo()
-                self.score += card.points
-                print(f"Round points: {self.score}")
+                card2 = self.card2[i]
+                card2.draw2()
+                value = f"{card2.value2}"
+                card2.calculate_lo()
+                self.score += card2.points
+            print(f"Next card is: {value}")
+            print(f"Round points: {self.score}") 
             self.total_score += self.score
 
     def do_outputs(self):
