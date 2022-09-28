@@ -75,12 +75,10 @@ class Director:
             for i in range(len(self.card2)):
                 card2 = self.card2[i]
                 card2.draw2()
-                value = f"{card2.value}"
-                value2 = f"{card2.value2}"
+                value = f"{card2.value2}"
                 card2.calculate_hi()
                 self.score += card2.points
             print(f"Next card is: {value}")
-            print(f"Value 2: {value2}")
             print(f"Round points: {self.score}") 
             self.total_score += self.score
 
