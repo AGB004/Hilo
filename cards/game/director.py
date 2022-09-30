@@ -8,9 +8,6 @@ class Director:
         self.score = 0
         self.total_score = 300
 
-        self.cards = Cards()
-        self.cards.draw()
-
     def start_game(self):
         
         while self.is_playing:
@@ -27,6 +24,9 @@ class Director:
         
         if not self.is_playing:
             return 
+
+        self.cards = Cards()
+        self.cards.draw()
 
         print(f"The first card is: {self.cards.first_card}")          
 
