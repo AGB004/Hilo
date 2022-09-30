@@ -28,12 +28,12 @@ class Director:
         if not self.is_playing:
             return 
 
-        print(f"The card is: {self.cards.first_card}")          
+        print(f"The first card is: {self.cards.first_card}")          
 
         guess = input("Higher or Lower? [h/l] ")
         self.score = 0
 
-        print(f"Next card is: {self.cards.second_card}")
+        print(f"The next card is: {self.cards.second_card}")
         self.score = self.cards.get_points(guess)
         print(f"Round points: {self.score}") 
         self.total_score += self.score
