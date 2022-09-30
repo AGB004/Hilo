@@ -12,9 +12,13 @@ class Cards():
         self.first_card = random.randint(1, 13)
         self.second_card = random.randint(1, 13)
 
-    def get_points(self, higherOrLower):
-        if ((higherOrLower == "l" and self.first_card > self.second_card) or
-            (higherOrLower == "h" and self.first_card < self.second_card)):
-            self.points = 100
+    def get_points(self, guess):
+        points = 0
+
+        if ((guess == "l" and self.first_card > self.second_card) or
+            (guess == "h" and self.first_card < self.second_card)):
+            points = 100
         else:
-            self.points = -75
+            points = -75
+        
+        return points
