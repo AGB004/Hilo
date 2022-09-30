@@ -4,33 +4,17 @@ class Cards():
     
     def __init__(self):
        
-        self.value1 = 0
-        self.value2 = 0
+        self.first_card = 0
+        self.second_card = 0
         self.points = 0
 
-    def draw1(self):
-        
-        self.value1 = random.randint(1, 13)
-    
-    def draw2(self):
-        
-        self.value2 = random.randint(1, 13)
+    def draw(self):
+        self.first_card = random.randint(1, 13)
+        self.second_card = random.randint(1, 13)
 
-    def calculate_hi(self):
-          
-        if self.value1 < self.value2:
+    def get_points(self, higherOrLower):
+        if ((higherOrLower == "l" and self.first_card > self.second_card) or
+            (higherOrLower == "h" and self.first_card < self.second_card)):
             self.points = 100
-        elif self.value1 > self.value2:
-            self.points = -75
         else:
-            self.points = 0
-
-    def calculate_lo(self):
-         
-        if self.value1 > self.value2:
-            self.points = 100
-        elif self.value1 < self.value2:
             self.points = -75
-        else:
-            self.points = 0
-
