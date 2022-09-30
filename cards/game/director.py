@@ -33,13 +33,6 @@ class Director:
         guess = input("Higher or Lower? [h/l] ")
         self.score = 0
 
-        """if draw_card.lower() == "h":
-            for i in range(len(self.card2)):
-                card2 = self.card2[i]
-                card2.draw2()
-                value = f"{card2.value2}"
-                card2.calculate_hi()
-                self.score += card2.points"""
         print(f"Next card is: {self.cards.second_card}")
         self.score = self.cards.get_points(guess)
         print(f"Round points: {self.score}") 
